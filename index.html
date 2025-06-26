@@ -23,7 +23,7 @@
     />
   </head>
   <body class="lexend-font">
-    <header class=" bg-yellow-50 py-8 mb-16">
+    <header class="bg-yellow-50 py-8 mb-16">
       <!-- ------------------------------------------------ -->
       <!-- navbar section -->
       <!-- ------------------------------------------------ -->
@@ -72,7 +72,7 @@
         <div class="w-1/2 space-y-4">
           <button class="flex items-center gap-3 bg-gray-200 p-4 rounded-lg">
             <img class="w-5" src="./assets/coin.png" alt="" />
-            <p class="text-gray-400"><span id="donated-money">0</span> BDT</p>
+            <p class="text-gray-400"><span id="donation-output">11000</span> BDT</p>
           </button>
           <h1 class="text-xl font-bold">
             Donate for Flood at Noakhali, Bangladesh
@@ -89,9 +89,10 @@
             class="text-gray-400 text-lg font-light p-4 rounded-lg w-full border-2 border-gray-200"
             type="number"
             placeholder="Write Donation Amount"
-            id="donation-amount"
+            id="donation-input"
           />
           <button
+            id="btn-donate-now"
             class="bg-lime-400 px-12 py-6 rounded-lg text-xl font-semibold border-2 border-lime-400 w-full"
           >
             Donate Now

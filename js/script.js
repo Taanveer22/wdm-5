@@ -2,6 +2,7 @@ console.log("conneted js");
 
 // global variable
 let bankBalance = document.getElementById("bank-balance");
+
 let donationOutput = document.getElementById("donation-output");
 let donationInput = document.getElementById("donation-input");
 

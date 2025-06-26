@@ -23,11 +23,11 @@
     />
   </head>
   <body class="lexend-font">
-    <!-- ------------------------------------------------ -->
-    <!-- header section start -->
-    <!-- ------------------------------------------------ -->
-    <header class="w-11/12 mx-auto my-6">
-      <nav class="flex justify-between items-center">
+    <header class=" bg-yellow-50 py-8 mb-16">
+      <!-- ------------------------------------------------ -->
+      <!-- navbar section -->
+      <!-- ------------------------------------------------ -->
+      <nav class="flex justify-between items-center w-11/12 mx-auto">
         <button class="bg-lime-400 rounded-lg text-xl font-semibold px-10 py-5">
           Blog
         </button>
@@ -38,20 +38,66 @@
 
         <div class="flex items-center gap-3">
           <img class="w-6" src="./assets/coin.png" alt="" />
-          <p class="text-xl text-gray-500 font-medium "><span>5500</span> BDT</p>
+          <p class="text-xl text-gray-500 font-medium">
+            <span id="bank-balance">5500</span> BDT
+          </p>
         </div>
       </nav>
     </header>
 
-    <main class="w-11/12 mx-auto">
-      <div class="flex items-center justify-center gap-5">
-        <button class="bg-lime-400 px-12 py-6 rounded-lg text-xl font-semibold border-2 border-lime-400">
+    <main class="w-11/12 mx-auto mb-16">
+      <!-- ---------------------------------------------- -->
+      <!-- history and donation button -->
+      <!-- ---------------------------------------------- -->
+      <section class="flex items-center justify-center gap-5 mb-8">
+        <button
+          class="bg-lime-400 px-12 py-6 rounded-lg text-xl font-semibold border-2 border-lime-400"
+        >
           Donation
         </button>
-        <button class="px-12 py-6 rounded-lg text-xl text-gray-500 font-semibold border-2 border-gray-300">
+        <button
+          class="px-12 py-6 rounded-lg text-xl text-gray-500 font-semibold border-2 border-gray-300"
+        >
           History
         </button>
-      </div>
+      </section>
+
+      <!-- ----------------------------------------------------- -->
+      <!-- donation card------------ -->
+      <!-- ----------------------------------------------------- -->
+      <section class="flex justify-between items-center">
+        <div class="w-1/2">
+          <img class="w-9/12 object-cover" src="./assets/noakhali.png" alt="" />
+        </div>
+        <div class="w-1/2 space-y-4">
+          <button class="flex items-center gap-3 bg-gray-200 p-4 rounded-lg">
+            <img class="w-5" src="./assets/coin.png" alt="" />
+            <p class="text-gray-400"><span id="donated-money">0</span> BDT</p>
+          </button>
+          <h1 class="text-xl font-bold">
+            Donate for Flood at Noakhali, Bangladesh
+          </h1>
+          <p class="text-lg text-gray-500 font-light">
+            The recent floods in Noakhali have caused significant damage to
+            homes infrastructure. Your donation will help provide essential
+            supplies and to those affected by this disaster. Every contribution,
+            big or small, makes difference. Please join us in supporting the
+            relief efforts and making a positive impact on the lives of those in
+            need.
+          </p>
+          <input
+            class="text-gray-400 text-lg font-light p-4 rounded-lg w-full border-2 border-gray-200"
+            type="number"
+            placeholder="Write Donation Amount"
+            id="donation-amount"
+          />
+          <button
+            class="bg-lime-400 px-12 py-6 rounded-lg text-xl font-semibold border-2 border-lime-400 w-full"
+          >
+            Donate Now
+          </button>
+        </div>
+      </section>
     </main>
 
     <script src="./js/script.js"></script>

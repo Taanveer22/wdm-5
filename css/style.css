@@ -2,3 +2,11 @@
   font-family: "Lexend", sans-serif;
   font-optical-sizing: auto;
 }
+
+.donation-input:hover {
+  background-color: rgb(125, 234, 235);
+}
+
+.donation-output:hover {
+  background-color: rgb(45, 223, 220);
+}

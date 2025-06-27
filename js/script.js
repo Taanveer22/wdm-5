@@ -1,35 +1,48 @@
 console.log("conneted js");
 
 // global variable
-let bankBalance = document.getElementById("bank-balance");
 
-let donationOutput = document.getElementById("donation-output");
-let donationInput = document.getElementById("donation-input");
+const allBtnDonateNow = document.getElementsByClassName("btn-donate-now");
+// console.log(allBtnDonateNow);
 
-const btnDonateNow = document.getElementById("btn-donate-now");
-// console.log(btnDonateNow);
+for (let oneBtnDonateNow of allBtnDonateNow) {
+  console.log(oneBtnDonateNow);
 
-// ------------------------------------------------------
-// event listenter for button donate now
-// ------------------------------------------------------
-btnDonateNow.addEventListener("click", function () {
-  console.log('donate now btn clicked');
-  let bankBalanceNumber = parseFloat(bankBalance.innerText);
-  console.log(bankBalanceNumber);
+  // ------------------------------------------------------
+  // event listenter for button donate now
+  // ------------------------------------------------------
+  oneBtnDonateNow.addEventListener("click", function (event) {
+    // console.log(event);
+    // console.log(event.target);
+    // console.log("donate now btn clicked");
 
-  let donationOutputNumber = parseFloat(donationOutput.innerText);
-  console.log(donationOutputNumber);
+    let bankBalanceElement = document.getElementById("bank-balance");
+    console.log(bankBalanceElement);
 
-  let donationInputNumber = parseFloat(donationInput.value);q
-  console.log(donationInputNumber);
+    let donationOutputElement =
+      event.target.parentNode.childNodes[1].childNodes[3].childNodes[1];
+    console.log(donationOutputElement);
 
-  let donatedMoney = donationInputNumber + donationOutputNumber;
-  console.log(donatedMoney);
+    let donationInputElement = event.target.parentNode.childNodes[7];
+    console.log(donationInputElement);
 
-  let remainingBankBalance = bankBalanceNumber - donationInputNumber;
-  console.log(remainingBankBalance);
+    let bankBalance = parseFloat(bankBalanceElement.innerText);
+    console.log(bankBalance);
 
-  // manipulate dom
-  donationOutput.innerText = donatedMoney;
-  bankBalance.innerText = remainingBankBalance;
-});
+    let donationOutput = parseFloat(donationOutputElement.innerText);
+    console.log(donationOutput);
+
+    let donationInput = parseFloat(donationInputElement.value);
+    console.log(donationInput);
+
+    let donatedMoney = donationInput + donationOutput;
+    console.log(donatedMoney);
+
+    let remainingBankBalance = bankBalance - donationInput;
+    console.log(remainingBankBalance);
+
+    // manipulate dom
+    donationOutputElement.innerText = donatedMoney;
+    bankBalanceElement.innerText = remainingBankBalance;
+  });
+}

@@ -4,9 +4,9 @@ console.log("conneted js");
 
 const allBtnDonateNow = document.getElementsByClassName("btn-donate-now");
 // console.log(allBtnDonateNow);
-
+// loop through all the card donate now button---------------
 for (let oneBtnDonateNow of allBtnDonateNow) {
-  console.log(oneBtnDonateNow);
+  // console.log(oneBtnDonateNow);
   // ------------------------------------------------------
   // event listenter for one donate now button
   // ------------------------------------------------------
@@ -54,3 +54,26 @@ for (let oneBtnDonateNow of allBtnDonateNow) {
     }
   });
 }
+
+// history and donation tab variable declaretion----------------------------------
+const historyTab = document.getElementById("history-tab");
+// console.log(historyTab);
+const donationTab = document.getElementById("donation-tab");
+// console.log(donationTab);
+
+// history tab functionality--------------------
+historyTab.addEventListener("click", function () {
+  historyTab.classList.add("bg-lime-400");
+  donationTab.classList.remove("bg-lime-400");
+
+  // hide card container
+  document.getElementById("card-container").classList.add("hidden");
+});
+
+// donation tab functionality-----------------------------------
+donationTab.addEventListener("click", function () {
+  donationTab.classList.add("bg-lime-400");
+  historyTab.classList.remove("bg-lime-400");
+  // show card container
+  document.getElementById("card-container").classList.remove("hidden");
+});

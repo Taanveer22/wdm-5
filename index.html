@@ -29,12 +29,12 @@
       <!-- ------------------------------------------------ -->
       <nav class="flex justify-between items-center w-11/12 mx-auto">
         <button class="bg-lime-400 rounded-lg text-xl font-semibold px-10 py-5">
-          Blog
+          <a href="./html/blog.html" target="_self">Blog</a>
         </button>
-        <div class="flex items-center gap-3">
+        <article class="flex items-center gap-3">
           <img class="w-12" src="./assets/logo.png" alt="" />
           <h5 class="text-xl font-semibold">Donate Bangladesh</h5>
-        </div>
+        </article>
 
         <div class="flex items-center gap-3">
           <img class="w-6" src="./assets/coin.png" alt="" />
@@ -43,6 +43,7 @@
           </p>
         </div>
       </nav>
+
     </header>
 
     <main class="w-11/12 mx-auto mb-16">
@@ -193,6 +194,8 @@
           </div>
         </section>
       </article>
+
+      <article id="history-list-container" class="hidden"></article>
     </main>
 
     <script src="./js/script.js"></script>

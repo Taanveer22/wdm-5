@@ -27,13 +27,13 @@ for (let oneBtnDonateNow of allBtnDonateNow) {
     // console.log(donationInputElement);
 
     // traverse dom-------------------------
-    let bankBalance = parseFloat(bankBalanceElement.innerText);
+    let bankBalance = Number(bankBalanceElement.innerText);
     // console.log(bankBalance);
 
-    let donationOutput = parseFloat(donationOutputElement.innerText);
+    let donationOutput = Number(donationOutputElement.innerText);
     // console.log(donationOutput);
 
-    let donationInput = parseFloat(donationInputElement.value);
+    let donationInput = Number(donationInputElement.value);
     // console.log(donationInput);
 
     let donatedMoney = donationInput + donationOutput;
@@ -46,11 +46,35 @@ for (let oneBtnDonateNow of allBtnDonateNow) {
     donationOutputElement.innerText = donatedMoney;
     bankBalanceElement.innerText = remainingBankBalance;
 
+    // dynamic dom
+    const historyListContainer = document.getElementById(
+      "history-list-container"
+    );
+    console.log(historyListContainer);
+
+    const title = event.target.parentNode.childNodes[3].innerText;
+    // console.log(title);
+    const date = new Date();
+    const listDiv = document.createElement("div");
+    listDiv.className = "p-5 m-5 border-2 border-gray-300 rounded-md";
+    listDiv.innerHTML = `
+       <h1 class="text-black text-xl font-bold">${donationInput} taka is ${title}</p>
+       <p class="text-gray-500 text-md font-light">Date : ${date}</p>
+
+  `;
+    historyListContainer.appendChild(listDiv);
+
     // validation
-    if (isNaN(donationInput) || donationInput <= 0) {
+    if (
+      isNaN(donationInput) ||
+      donationInput <= 0 ||
+      donationInput >= bankBalance
+    ) {
       alert("invalid donation amount");
+      return;
     } else {
       alert("your donation has received successfully");
+      return;
     }
   });
 }
@@ -68,6 +92,8 @@ historyTab.addEventListener("click", function () {
 
   // hide card container
   document.getElementById("card-container").classList.add("hidden");
+  // show history list
+  document.getElementById("history-list-container").classList.remove("hidden");
 });
 
 // donation tab functionality-----------------------------------
@@ -76,4 +102,6 @@ donationTab.addEventListener("click", function () {
   historyTab.classList.remove("bg-lime-400");
   // show card container
   document.getElementById("card-container").classList.remove("hidden");
+  // hide history list
+  document.getElementById("history-list-container").classList.add("hidden");
 });

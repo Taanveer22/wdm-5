@@ -4,14 +4,14 @@ console.log("conneted js");
 // all buttons selcted by DOM-------------------
 // ------------------------------------------
 const allBtnDonateNow = document.getElementsByClassName("btn-donate-now");
-// console.log(allBtnDonateNow);
+console.log(allBtnDonateNow);
 
 // -------------------------------------------------------------
 // loop through all the buttons-------------------
 // event listenter for one button-----------------
 // ------------------------------------------------------------
 for (let oneBtnDonateNow of allBtnDonateNow) {
-  // console.log(oneBtnDonateNow);
+  console.log(oneBtnDonateNow);
   oneBtnDonateNow.addEventListener("click", function (event) {
     // console.log(event);
     // console.log(event.target);

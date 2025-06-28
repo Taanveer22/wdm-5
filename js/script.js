@@ -1,7 +1,6 @@
 console.log("conneted js");
 
-// global variable
-
+// all buttons selcted-------------------
 const allBtnDonateNow = document.getElementsByClassName("btn-donate-now");
 // console.log(allBtnDonateNow);
 // loop through all the card donate now button---------------
@@ -21,21 +20,34 @@ for (let oneBtnDonateNow of allBtnDonateNow) {
 
     let donationOutputElement =
       event.target.parentNode.childNodes[1].childNodes[3].childNodes[1];
-    // console.log(donationOutputElement);
+    console.log(donationOutputElement);
 
     let donationInputElement = event.target.parentNode.childNodes[7];
-    // console.log(donationInputElement);
+    console.log(donationInputElement);
 
     // traverse dom-------------------------
-    let bankBalance = Number(bankBalanceElement.innerText);
+    let bankBalance = parseFloat(bankBalanceElement.innerText);
     // console.log(bankBalance);
 
-    let donationOutput = Number(donationOutputElement.innerText);
+    let donationOutput = parseFloat(donationOutputElement.innerText);
     // console.log(donationOutput);
 
-    let donationInput = Number(donationInputElement.value);
+    let donationInput = parseFloat(donationInputElement.value);
     // console.log(donationInput);
 
+    // validation
+    if (
+      isNaN(donationInput) ||
+      donationInput <= 0 ||
+      donationInput >= bankBalance
+    ) {
+      alert("invalid donation amount");
+      return;
+    } else {
+      alert("your donation has received successfully");
+    }
+
+    // math calculation
     let donatedMoney = donationInput + donationOutput;
     // console.log(donatedMoney);
 
@@ -55,6 +67,7 @@ for (let oneBtnDonateNow of allBtnDonateNow) {
     const title = event.target.parentNode.childNodes[3].innerText;
     // console.log(title);
     const date = new Date();
+
     const listDiv = document.createElement("div");
     listDiv.className = "p-5 m-5 border-2 border-gray-300 rounded-md";
     listDiv.innerHTML = `
@@ -62,20 +75,8 @@ for (let oneBtnDonateNow of allBtnDonateNow) {
        <p class="text-gray-500 text-md font-light">Date : ${date}</p>
 
   `;
-    historyListContainer.appendChild(listDiv);
 
-    // validation
-    if (
-      isNaN(donationInput) ||
-      donationInput <= 0 ||
-      donationInput >= bankBalance
-    ) {
-      alert("invalid donation amount");
-      return;
-    } else {
-      alert("your donation has received successfully");
-      return;
-    }
+    historyListContainer.appendChild(listDiv);
   });
 }
 

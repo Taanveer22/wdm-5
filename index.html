@@ -194,6 +194,38 @@
         </section>
       </article>
 
+      <!-- success modal -->
+      <!-- Open the modal using ID.showModal() method -->
+      <dialog id="success_modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box text-center space-y-5">
+          <h3 class="text-3xl font-extrabold">Congrates!</h3>
+          <img class="block mx-auto" src="./assets/coin.png" alt="" />
+          <p class="text-gray-400 text-md">You have donated for Humankind</p>
+          <h5 class="text-2xl text-gray-700 font-bold">Successfully</h5>
+          <div class="modal-action flex justify-center items-center">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn text-gray-500">Close Confirmation</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
+      <!-- error modal -->
+      <!-- Open the modal using ID.showModal() method -->
+      <dialog id="error_modal" class="modal modal-bottom sm:modal-middle">
+        <div class="modal-box text-center bg-red-500 space-y-5">
+          <h3 class="text-4xl font-bold">Failed!!!</h3>
+          <p class="text-2xl">Invalid Donation Amount</p>
+          <div class="modal-action flex justify-center items-center">
+            <form method="dialog">
+              <!-- if there is a button in form, it will close the modal -->
+              <button class="btn text-gray-600">Close</button>
+            </form>
+          </div>
+        </div>
+      </dialog>
+
       <article id="history-list-container" class="hidden"></article>
     </main>
 

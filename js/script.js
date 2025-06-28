@@ -20,10 +20,10 @@ for (let oneBtnDonateNow of allBtnDonateNow) {
 
     let donationOutputElement =
       event.target.parentNode.childNodes[1].childNodes[3].childNodes[1];
-    console.log(donationOutputElement);
+    // console.log(donationOutputElement);
 
     let donationInputElement = event.target.parentNode.childNodes[7];
-    console.log(donationInputElement);
+    // console.log(donationInputElement);
 
     // traverse dom-------------------------
     let bankBalance = parseFloat(bankBalanceElement.innerText);
@@ -35,16 +35,22 @@ for (let oneBtnDonateNow of allBtnDonateNow) {
     let donationInput = parseFloat(donationInputElement.value);
     // console.log(donationInput);
 
+    const errorModal = document.getElementById("error_modal");
+    console.log(errorModal);
+
+    const successModal = document.getElementById("success_modal");
+    console.log(successModal);
+
     // validation
     if (
       isNaN(donationInput) ||
       donationInput <= 0 ||
       donationInput >= bankBalance
     ) {
-      alert("invalid donation amount");
+      errorModal.showModal();
       return;
     } else {
-      alert("your donation has received successfully");
+      successModal.showModal();
     }
 
     // math calculation
